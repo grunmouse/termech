@@ -1,0 +1,14 @@
+{
+  "name": "@grunmouse/termech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test\\test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grunmouse/math-vector": "link:..\\math-vector"
+  }
+}
