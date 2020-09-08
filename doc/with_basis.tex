@@ -1,0 +1,248 @@
+\subsection{Рассмотрим частный случай}
+Если имеется возможность рассчитать $\vec{M}$ относительно любой точки, перенесём начало системы координат в точку $p_0$.
+
+\begin{align}
+	\vec{p}_0 = \vec{0};
+\end{align}
+
+Введём для расчёта базис
+\begin{equation}
+	\left\{
+		\begin{array}{l}
+		\vec{e}_0 = \vec{p}_1 \times \vec{p}_2,\\
+		\vec{e}_1 = \vec{p}_1,\\
+		\vec{e}_2 = \vec{p}_2.
+		\end{array}
+	\right.
+\end{equation}
+
+Тогда уравнение моментов примет вид
+
+\begin{equation}
+	\sum\limits_{i=0}^2 
+		\begin{vmatrix} 
+		[ \vec e_1,\; \vec e_2 ] &  [ \vec e_2,\; \vec e_0 ] & [ \vec e_0,\; \vec e_1 ] \\ 
+		p_{i,{e_0}} & p_{i,{e_1}} & p_{i,{e_2}} \\ 
+		S_{i,{e_0}} & S_{i,{e_1}} & S_{i,{e_2}}
+		\end{vmatrix}
+		= -\vec{M}.
+\end{equation}
+
+Рассчитаем произведения
+$$[ \vec e_1,\; \vec e_2 ] = \vec p_1 \times \vec p_2 = \vec e_0.$$
+$$[ \vec e_2,\; \vec e_0 ] 
+= [ \vec p_2, [ \vec p_1,\; \vec p_2 ] ] 
+= \vec p_1 p_2^2 - \vec p_2 \left(\vec p_1 \cdot \vec p_2 \right).$$
+
+$$[ \vec e_0,\; \vec e_1 ]
+ = - [ \vec p_1,\; [ \vec p_1,\; \vec p_2 ] ]
+ = - \vec p_1 \left(\vec p_1 \cdot \vec p_2 \right) + \vec p_2 p_1^2.$$
+ 
+Обозначим
+$$[ \vec e_2,\; \vec e_0 ] = \vec e_1';$$
+$$[ \vec e_0,\; \vec e_1 ] = \vec e_2';$$
+
+Получился ещё один базис - $\left( \vec e_0; \vec e_1'; \vec e_2' \right) $.
+
+\begin{equation*}
+	\begin{vmatrix} 
+		\vec e_0 &  \vec e_1' & \vec e_2' \\ 
+		p_{0,{e_0}} & p_{0,{e_1}} & p_{0,{e_2}} \\ 
+		S_{0,{e_0}} & S_{0,{e_1}} & S_{0,{e_2}}
+	\end{vmatrix}
+	+
+	\begin{vmatrix} 
+		\vec e_0 &  \vec e_1' & \vec e_2' \\ 
+		p_{1,{e_0}} & p_{1,{e_1}} & p_{1,{e_2}} \\ 
+		S_{1,{e_0}} & S_{1,{e_1}} & S_{1,{e_2}}
+	\end{vmatrix}
+	+
+	\begin{vmatrix} 
+		\vec e_0 &  \vec e_1' & \vec e_2' \\ 
+		p_{2,{e_0}} & p_{2,{e_1}} & p_{2,{e_2}} \\ 
+		S_{2,{e_0}} & S_{2,{e_1}} & S_{2,{e_2}}
+	\end{vmatrix}
+	= -\vec{M}.
+\end{equation*}
+\begin{equation*}
+	\begin{vmatrix} 
+		\vec e_0 &  \vec e_1' & \vec e_2' \\ 
+		0 & 1 & 0 \\ 
+		S_{1,{e_0}} & S_{1,{e_1}} & S_{1,{e_2}}
+	\end{vmatrix}
+	+
+	\begin{vmatrix} 
+		\vec e_0 &  \vec e_1' & \vec e_2' \\ 
+		0 & 0 & 1 \\ 
+		S_{2,{e_0}} & S_{2,{e_1}} & S_{2,{e_2}}
+	\end{vmatrix}
+	= -\vec{M}.
+\end{equation*}
+\begin{equation*}
+	\vec e_0 S_{1,{e_2}} - \vec e_2' S_{1,{e_0}} + \vec e_1'S_{2,{e_0}} - \vec e_0 S_{2,{e_1}}
+	= -\vec{M}.
+\end{equation*}
+\begin{equation*}
+	\left(S_{1,{e_2}} -  S_{2,{e_1}} \right)\vec{e_0}
+	+ S_{2,{e_0}} \vec e_1' 
+	- S_{1,{e_0}} \vec e_2' 
+	= -\vec{M}.
+\end{equation*}
+
+\begin{equation}
+\left\{\begin{array}{l}
+	S_{1,{e_2}} -  S_{2,{e_1}} = - M_{e_0},\\
+	S_{2,{e_0}} = -M_{e_1'},\\
+	S_{1,{e_0}} = M_{e_2'}.
+\end{array}\right.
+\end{equation}
+
+Уравнения сил имеет вид
+\begin{equation*}
+\vec{S}_0 + \vec S_1 + \vec S_2 = -\vec{F}.
+\end{equation*}
+
+Чтобы сделать задачу статически определимой, нужно сформулировать ограничения подвижности точек опоры.
+
+\subsubsection{С неподвижной опорой}
+
+Положим, что опора 0 неподвижна. Она лишает систему трёх степеней свободы.\\
+Тогда две другие опоры должны лишать систему остальных трёх степеней свободы.
+Пусть опора 1 скользит вдоль прямой, а опора 2 опирается на плоскость.
+
+
+\begin{equation}
+\left\{\begin{array}{l}
+	\vec{b}\times\vec{S_1} = \vec{0},\\
+	\vec n \cdot \vec S_2 = 0.
+\end{array}\right.
+\end{equation}
+где $\vec{b}$ - направляющий прямой, а $\vec n$ - нормаль плоскости
+
+\begin{multline*}
+\begin{vmatrix} 
+\vec e_0 &  [ \vec e_2,\; \vec e_0 ] & [ \vec e_0,\; \vec e_1 ] \\ 
+b_{e_0} & b_{e_1} & b_{e_2} \\ 
+S_{1,{e_0}} & S_{1,{e_1}} & S_{1,{e_2}}
+\end{vmatrix} 
+= \\ =
+\vec e_0 \left( b_{e_1} S_{1,{e_2}} - b_{e_2} S_{1,{e_1}} \right)
++ \vec e_1' \left( b_{e_2} S_{1,{e_0}} - b_{e_0} S_{1,{e_2}} \right)
++ \vec e_2' \left( b_{e_0} S_{1,{e_1}} - b_{e_1} S_{1,{e_0}} \right);
+\end{multline*}
+
+Для расчёта скалярного произведения потребуется метрический тензор
+
+\begin{equation}
+g = 
+\begin{pmatrix}
+	\vec e_0 \cdot \vec e_0 & \vec e_0 \cdot \vec e_1 & \vec e_0 \cdot \vec e_2 \\
+	\vec e_1 \cdot \vec e_0 & \vec e_1 \cdot \vec e_1 & \vec e_1 \cdot \vec e_2 \\
+	\vec e_2 \cdot \vec e_0 & \vec e_2 \cdot \vec e_1 & \vec e_2 \cdot \vec e_2
+\end{pmatrix}
+=
+\begin{pmatrix}
+	e_0^2 & 0 & 0 \\
+	0 & e_1^2 & \vec e_1 \cdot \vec e_2 \\
+	0 & \vec e_2 \cdot \vec e_1 & e_2^2
+\end{pmatrix}
+\end{equation}
+
+\begin{multline*}
+	\vec n \cdot \vec S_2 = \sum\limits_{i=0}^{2}\sum\limits_{j=0}^{2} g_{ij} n_{e_i} S_{2,e_j} =\\=
+	e_0^2 n_{e_0} S_{2,{e_0}} +
+	e_1^2 n_{e_1} S_{2,{e_1}} +
+	\vec e_1 \cdot \vec e_2 n_{e_2} S_{2,{e_1}} +
+	\vec e_1 \cdot \vec e_2 n_{e_1} S_{2,{e_2}} +
+	e_2^2 n_{e_2} S_{2,e_2}
+	= \\ =
+	e_0^2 n_{e_0} S_{2,{e_0}} +
+	\left( e_1^2 n_{e_1} + \vec e_1 \cdot \vec e_2 n_{e_2} \right) S_{2,{e_1}} +
+	\left( \vec e_1 \cdot \vec e_2 n_{e_1} + e_2^2 n_{e_2} \right) S_{2,{e_2}}.
+\end{multline*}
+
+Система примет вид
+\begin{equation}
+\left\{\begin{array}{l}
+	e_0^2 n_{e_0} S_{2,{e_0}} +
+	\left( e_1^2 n_{e_1} + \vec e_1 \cdot \vec e_2 n_{e_2} \right) S_{2,{e_1}} +
+	\left( \vec e_1 \cdot \vec e_2 n_{e_1} + e_2^2 n_{e_2} \right) S_{2,{e_2}} = 0, \\
+
+	b_{e_1} S_{1,{e_2}} - b_{e_2} S_{1,{e_1}} = 0, \\
+	b_{e_2} S_{1,{e_0}} - b_{e_0} S_{1,{e_2}} = 0, \\
+	b_{e_0} S_{1,{e_1}} - b_{e_1} S_{1,{e_0}} = 0, \\
+
+	S_{0,{e_0}} + S_{1,{e_0}} + S_{2,{e_0}} = - F_{e_0},\\
+	S_{0,{e_1}} + S_{1,{e_1}} + S_{2,{e_1}} = - F_{e_0},\\
+	S_{0,{e_2}} + S_{1,{e_2}} + S_{2,{e_2}} = - F_{e_0},\\
+
+	S_{1,{e_2}} -  S_{2,{e_1}} = - M_{e_0},\\
+	S_{2,{e_0}} = -M_{e_1'},\\
+	S_{1,{e_0}} = M_{e_2'}.
+\end{array}\right.
+\end{equation}
+
+\begin{equation*}
+\left\{\begin{array}{l}
+	S_{1,{e_0}} = M_{e_2'},\\
+	S_{2,{e_0}} = -M_{e_1'},\\
+	
+	- e_0^2 n_{e_0} M_{e_1'} +
+	\left( e_1^2 n_{e_1} + \vec e_1 \cdot \vec e_2 n_{e_2} \right) S_{2,{e_1}} +
+	\left( \vec e_1 \cdot \vec e_2 n_{e_1} + e_2^2 n_{e_2} \right) S_{2,{e_2}} = 0, \\
+
+	b_{e_1} S_{1,{e_2}} - b_{e_2} S_{1,{e_1}} = 0, \\
+	b_{e_2} M_{e_2'} - b_{e_0} S_{1,{e_2}} = 0, \\
+	b_{e_0} S_{1,{e_1}} - b_{e_1} M_{e_2'} = 0, \\
+
+	S_{0,{e_0}} + M_{e_2'} - M_{e_1'} = - F_{e_0},\\
+	S_{0,{e_1}} + S_{1,{e_1}} + S_{2,{e_1}} = - F_{e_0},\\
+	S_{0,{e_2}} + S_{1,{e_2}} + S_{2,{e_2}} = - F_{e_0},\\
+
+	S_{1,{e_2}} -  S_{2,{e_1}} = - M_{e_0}.
+\end{array}\right.
+\end{equation*}
+\begin{equation*}
+\left\{\begin{array}{l}
+	S_{1,{e_0}} = M_{e_2'},\\
+	S_{2,{e_0}} = -M_{e_1'},\\
+	
+	S_{1,{e_1}} = \frac{b_{e_1}}{b_{e_0}} M_{e_2'}, \\
+	S_{1,{e_2}} = \frac{b_{e_2}}{b_{e_0}} M_{e_2'}, \\
+	b_{e_1} S_{1,{e_2}} - b_{e_2} S_{1,{e_1}} \equiv 0, \\
+
+	\left( e_1^2 n_{e_1} + \vec e_1 \cdot \vec e_2 n_{e_2} \right) S_{2,{e_1}} +
+	\left( \vec e_1 \cdot \vec e_2 n_{e_1} + e_2^2 n_{e_2} \right) S_{2,{e_2}} = e_0^2 n_{e_0} M_{e_1'}, \\
+
+	S_{0,{e_0}} = - F_{e_0} - M_{e_2'} + M_{e_1'},\\
+	S_{0,{e_1}} + S_{1,{e_1}} + S_{2,{e_1}} = - F_{e_0},\\
+	S_{0,{e_2}} + S_{1,{e_2}} + S_{2,{e_2}} = - F_{e_0},\\
+
+	S_{1,{e_2}} -  S_{2,{e_1}} = - M_{e_0}.
+\end{array}\right.
+\end{equation*}
+\begin{equation*}
+\left\{\begin{array}{l}
+	S_{1,{e_0}} = M_{e_2'},\\
+	S_{1,{e_1}} = \frac{b_{e_1}}{b_{e_0}} M_{e_2'}, \\
+	S_{1,{e_2}} = \frac{b_{e_2}}{b_{e_0}} M_{e_2'}, \\
+	
+	S_{2,{e_0}} = -M_{e_1'},\\
+	S_{2,{e_1}} = M_{e_0} + \frac{b_{e_2}}{b_{e_0}} M_{e_2'},\\
+	
+	S_{2,{e_2}} 
+	= 
+	\frac{
+		e_0^2 n_{e_0} M_{e_1'}
+		- \left( e_1^2 n_{e_1} + \vec e_1 \cdot \vec e_2 n_{e_2} \right) S_{2,{e_1}}
+	}
+	{\left( \vec e_1 \cdot \vec e_2 n_{e_1} + e_2^2 n_{e_2} \right)}
+	, \\
+
+	S_{0,{e_0}} = - F_{e_0} - M_{e_2'} + M_{e_1'},\\
+	S_{0,{e_1}} = - F_{e_0} - S_{1,{e_1}} - S_{2,{e_1}},\\
+	S_{0,{e_2}} = - F_{e_0} - S_{1,{e_2}} - S_{2,{e_2}},\\
+
+\end{array}\right.
+\end{equation*}
+
