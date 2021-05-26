@@ -16,7 +16,7 @@ function StructSupport(raw){
 	else{
 		let {point, glide, normal} = raw;
 		if(normal){
-			let a = normal.someNormal(), b = a.cross(normal);
+			let a = normal.someNormal(), b = a.cross(normal); //Проверить порядок операндов
 			glide = [a,b];
 		}
 		else if(!glide){
